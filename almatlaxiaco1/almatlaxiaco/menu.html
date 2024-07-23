@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <title>REGISTRO MENU</title>
+</head>
+<body>
+    <div class="container">
+        <center><div class="title">¡REGISTRAR MENU!</div></center>
+        <form id="form-validation" action="http://localhost/almatlaxiaco/guardar_menu.php" method="post">
+            <div class="form-group">
+                <span>CODIGO</span>
+                <select id="codigo" name="codigo" required>
+                    <option value="">Selecciona el código</option>
+                    <option value="P001">C00 - Comida</option>
+                    <option value="B001">B00 - Bebida</option>
+                    <option value="D001">D00 - Desayuno</option>
+                    <option value="S001">P00 - Postre</option>
+                </select>
+                <small class="error-msg" data-validate-for="codigo">Selecciona un código</small>
+            </div>
+            <div class="form-group">
+                <span>DESCRIPCION</span>
+                <select id="descripcion" name="descripcion" required>
+                    <option value="">Selecciona la descripción</option>
+                    <!-- Opciones para Platillos -->
+                    <option value="Huevo con jamon">Huevo con jamon</option>
+                    <option value="Pancakes">Pancakes</option>
+                    <option value="Crepas o hotcackes">Crepas o hotcackes</option>
+                    <option value="Cafe">Cafe</option>
+                    <!-- Opciones para Bebidas -->
+                    <option value="Pollo a la parrilla">Pollo a la parrilla</option>
+                    <option value="pozole">pozole</option>
+                    <option value="Barbacoa">Barbacoa</option>
+                    <option value="Mariscos">Mariscos</option>
+                    <!-- Opciones para Desayuno -->
+                    <option value="Agua de jamaica">Agua de jamaica</option>
+                    <option value="Refrescos">Refrescos</option>
+                    <!-- Opciones para Postre -->
+                    <option value="Vino">Vino</option>
+                    <option value="Refrescos">Refrescos</option>
+                    <option value="agua de jamaica">agua de jamaica</option>
+                    <!-- Opciones para Desayuno -->
+                    <option value="cervezas">cervezas</option>
+                    <option value="Rebanadas de pastel">Rebanadas de pastel</option>
+                    <!-- Opciones para Postre -->
+                    <option value="Helado">Helado</option>
+                    <option value="Flan">Flan</option>
+                    <option value="Dulce tradicconal">Dulce tradicconal</option>
+                </select>
+                <small class="error-msg" data-validate-for="descripcion">Selecciona una descripción</small>
+            </div>
+            <div class="form-group">
+                <span>CATEGORIA</span>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecciona la categoría</option>
+                    <option value="Platillo">Comida</option>
+                    <option value="Bebida">Bebida</option>
+                    <option value="Desayuno">Desayuno</option>
+                    <option value="Postre">Postre</option>
+                </select>
+                <small class="error-msg" data-validate-for="categoria">Selecciona una categoría</small>
+            </div>
+            <div class="form-group">
+                <span>PRECIO</span>
+                <select id="precio" name="precio" required>
+                    <option value="">Selecciona el precio</option>
+                    <!-- Opciones de precio -->
+                    <option value="45">$45 Huevos con jamon</option>
+                    <option value="25">$25 Pancakes</option>
+                    <option value="45">$45 crepas o hotcackes</option>
+                    <option value="20">$20 cafe</option>
+                    <option value="60">$60 pollo ala parrilla</option>
+                    <option value="25">$25 pozole</option>
+                    <option value="100">$100 Barbacoa</option>
+                    <option value="250">$250 mariscos</option>
+                    <option value="150">$150 vino</option>
+                    <option value="25">$25 Refrescos</option>
+                    <option value="20">$20 agua de jamaica</option>
+                    <option value="25">$25 Cerveza</option>
+                    <option value="30">$30 rebanadas de pastel</option>
+                    <option value="25">$25 flan</option>
+                    <option value="35">$35 Dulces tradicionales</option>
+                </select>
+                <small class="error-msg" data-validate-for="precio">Selecciona un precio</small>
+            </div>
+            
+            <div class="button">
+                <button type="button" onclick="window.location.href='http://localhost/almatlaxiaco/bienvenida.php'">REGRESAR</button>
+                <input type="submit" value="Guardar">
+            </div>
+        </form>
+    </div>
+    <script>
+        // Validación básica del formulario
+        const form = document.getElementById('form-validation');
+        form.addEventListener('submit', function(event) {
+            const codigo = document.getElementById('codigo').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const categoria = document.getElementById('categoria').value;
+            const precio = document.getElementById('precio').value;
+
+            if (!codigo) {
+                alert("Selecciona un código.");
+                event.preventDefault();
+                return;
+            }
+
+            if (!descripcion) {
+                alert("Selecciona una descripción.");
+                event.preventDefault();
+                return;
+            }
+
+            if (!categoria) {
+                alert("Selecciona una categoría.");
+                event.preventDefault();
+                return;
+            }
+
+            if (!precio) {
+                alert("Selecciona un precio.");
+                event.preventDefault();
+                return;
+            }
+
+            console.log('Formulario válido, se puede enviar');
+        });
+    </script>
+</body>
+</html>

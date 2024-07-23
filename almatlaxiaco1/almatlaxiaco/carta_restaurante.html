@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurante</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('12.webp'); /* Ruta de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 180vh;
+            flex-direction: column;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(12, 55, 196, 0.705);
+            border-radius: 10px;
+            max-width: 90%;
+            justify-content: space-around;
+        }
+        .menu-title {
+            text-align: center;
+            margin-bottom: 39px;
+            color: #df3b7a;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .menu-section {
+            margin: 10px;
+            width: 250px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+        .menu-section h2 {
+            text-align: center;
+            margin: 10px 0;
+            color: #333;
+            font-size: 1.5em;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-bottom: 2px solid #e68e1b;
+        }
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-section ul li {
+            background-color: #fdfdfd;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(4, 170, 156, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-section ul li .details {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+        .menu-section ul li .price {
+            margin-top: 5px;
+            font-weight: bold;
+            color: #e68e1b;
+        }
+        .menu-section ul li .code {
+            margin-top: 5px;
+            font-style: italic;
+            color: #07ca90;
+        }
+        .menu-section .images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .menu-section .images img {
+            width: 100%;
+            height: auto;
+            max-width: 100px; /* Ajusta el tamaño máximo de las imágenes */
+            border-radius: 5px;
+            object-fit: cover;
+            margin: 5px;
+            box-shadow: 0 0 5px rgba(160, 4, 4, 0.3);
+        }
+        .logout-button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .logout-button {
+            background-color: #e68e1b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #0d8bdf;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-title">La Carta de Hoy</div>
+    <div class="menu-container">
+        <div class="menu-section" id="desayuno">
+            <h2>#D00 Desayuno</h2>
+            <ul>
+                <li>
+                    <span class="details">Huevos con Jamón</span>
+                    <span class="price">$45.00</span>
+                    <span class="code">#D01</span>
+                </li>
+                <li class="images">
+                    <img src="img/jamon.jpg" alt="Desayuno 1">
+                </li>
+                <li>
+                    <span class="details">Pancakes</span>
+                    <span class="price">$25</span>
+                    <span class="code">#D02</span>
+                </li>
+                <li>
+                    <span class="details">crepas o hotcackes</span>
+                    <span class="price">$20</span>
+                    <span class="code">#D03</span>
+                </li>
+                <li class="images">
+                    <img src="img/crep.png" alt="Desayuno 2">
+                </li>
+                <li>
+                    <span class="details">Café</span>
+                    <span class="price">$20.00</span>
+                    <span class="code">#D04</span>
+                </li>
+                <li class="images">
+                    <img src="img/cafe.gif" alt="Desayuno 3">
+                </li>
+            </ul>
+        </div>
+        <div class="menu-section" id="comida">
+            <h2>#C00 Comida</h2>
+            <ul>
+                <li>
+                    <span class="details">pozole</span>
+                    <span class="price">$25.00</span>
+                    <span class="code">#C01</span>
+                </li>
+                <li class="images">
+                    <img src="img/pollo.jpg" alt="Comida 1">
+                </li>
+                <li>
+                    <span class="details">Pollo a la Parrilla</span>
+                    <span class="price">80.00</span>
+                    <span class="code">#C02</span>
+                </li>
+                <li>
+                    <span class="details">Barbacoa</span>
+                    <span class="price">$100.00</span>
+                    <span class="code">#C03</span>
+                </li>
+                <li class="images">
+                    <img src="img/pozole.jpg" alt="Comida 2">
+                </li>
+                <li>
+                    <span class="details">mariscos</span>
+                    <span class="price">$250.00</span>
+                    <span class="code">#C04</span>
+                </li>
+                <li class="images">
+                    <img src="img/mari.jpg" alt="Comida 3">
+                </li>
+            </ul>
+        </div>
+        <div class="menu-section" id="bebida">
+            <h2>#B00 Bebida</h2>
+            <ul>
+                <li>
+                    <span class="details">Vino</span>
+                    <span class="price">$150.00</span>
+                    <span class="code">#B01</span>
+                </li>
+                <li class="images">
+                    <img src="img/vino.webp" alt="Bebida 1">
+                </li>
+                <li>
+                    <span class="details">Refrescos</span>
+                    <span class="price">$25.00</span>
+                    <span class="code">#B02</span>
+                </li>
+                <li>
+                    <span class="details">Agua de jamaica</span>
+                    <span class="price">$20.00</span>
+                    <span class="code">#B03</span>
+                </li>
+                <li class="images">
+                    <img src="img/refresca.jpg" alt="Bebida 2">
+                </li>
+                <li>
+                    <span class="details">Cerveza</span>
+                    <span class="price">$25.00</span>
+                    <span class="code">#B04</span>
+                </li>
+                <li class="images">
+                    <img src="img/cervezas.jpg" alt="Bebida 3">
+                </li>
+            </ul>
+        </div>
+        <div class="menu-section" id="postres">
+            <h2>#P00 Postres</h2>
+            <ul>
+                <li>
+                    <span class="details">Rebanadas de Pastel</span>
+                    <span class="price">$30.00</span>
+                    <span class="code">#P01</span>
+                </li>
+                <li class="images">
+                    <img src="img/pastel.jpg" alt="Postres 1">
+                </li>
+                <li>
+                    <span class="details">Helados</span>
+                    <span class="price">$40.00</span>
+                    <span class="code">#P02</span>
+                </li>
+                <li>
+                    <span class="details">Flan</span>
+                    <span class="price">$25.00</span>
+                    <span class="code">#P03</span>
+                </li>
+                <li class="images">
+                    <img src="img/flan.jpg" alt="Postres 2">
+                </li>
+                <li>
+                    <span class="details">Dulces tradicionales</span>
+                    <span class="price">$20.00</span>
+                    <span class="code">#P04</span>
+                </li>
+                <li class="images">
+                    <img src="img/tradi.webp" alt="Postres 3">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="logout-button-container">
+        <a href="http://localhost/almatlaxiaco1/almatlaxiaco/index.php" class="logout-button">Cerrar Sesión</a>
+    </div>
+</body>
+</html>
