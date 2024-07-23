@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="emple.css">
+    <title>REGISTRO EMPLEADO</title>
+    <style>
+        .error-msg {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center><div class="title">¡REGISTRAR EMPLEADO!</div></center>
+        <form id="form-validation" action="guardar_empleados.php" method="post" onsubmit="return validateForm()">
+            <div class="form-columns">
+                <div class="form-group">
+                    <span>NOMBRES COMPLETO</span>
+                    <input type="text" id="nombre_completo" name="nombre_completo" placeholder="Ingresa tu nombre completo" oninput="validateNOMBRE(this)" required>
+                    <small class="error-msg" data-validate-for="nombre_completo">Completa este campo solo con letras y espacios</small>
+                </div>
+                <div class="form-group">
+                    <span>PUESTO</span>
+                    <input type="text" id="puesto" name="puesto" placeholder="Ingresa tu puesto a ocupar" oninput="validatePUESTO(this)" required>
+                    <small class="error-msg" data-validate-for="puesto">Completa este campo solo con letras y espacios</small>
+                </div>
+                <div class="form-group">
+                    <span>HORARIO</span>
+                    <input type="text" id="horario_trabajo" name="horario_trabajo" placeholder="Ingresa el horario" required>
+                    <small class="error-msg" data-validate-for="horario_trabajo">Completa este campo</small>
+                </div>
+                <div class="form-group">
+                    <span>TELEFONO</span>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+520123456789" oninput="validateTELEFONO(this)" required>
+                    <small class="error-msg" data-validate-for="telefono">Completa este campo con 10 dígitos numéricos</small>
+                </div>
+                <div class="form-group">
+                    <span>SALARIO</span>
+                    <input type="number" id="salario" name="salario" placeholder="Ingresa el salario" required>
+                    <small class="error-msg" data-validate-for="salario">Completa este campo</small>
+                </div>
+                <div class="form-group">
+                    <span>FECHA DE CONTRATRACION</span>
+                    <input type="text" id="fecha_contratacion" name="fecha_contratacion" placeholder="Ingresa la fecha de contratacion" oninput="validateFECHA(this)" required>
+                    <small class="error-msg" data-validate-for="fecha_contratacion">Formato válido: dd/mm/yyyy</small>
+                </div>
+            </div>
+            <div class="button">
+                <button type="button" onclick="window.location.href='http://localhost/almatlaxiaco1/almatlaxiaco/bienvenida.php'">REGRESAR</button>
+                <input type="submit" value="GUARDAR">
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateNOMBRE(input) {
+            const value = input.value;
+            const newValue = value.replace(/[^a-zA-ZÑñáéíóúÁÉÍÓÚ\s]/g, '');
+            if (value !== newValue) {
+                input.value = newValue;
+            }
+        }
+
+        function validatePUESTO(input) {
+            const value = input.value;
+            const newValue = value.replace(/[^a-zA-ZÑñáéíóúÁÉÍÓÚ\s]/g, '');
+            if (value !== newValue) {
+                input.value = newValue;
+            }
+        }
+
+        function validateTELEFONO(input) {
+            const value = input.value;
+            const newValue = value.replace(/[^0-9]/g, '');
+            if (value !== newValue) {
+                input.value = newValue;
+            }
+            if (newValue.length > 10) {
+                input.value = newValue.slice(0, 10);
+            }
+        }
+
+        function validateFECHA(input) {
+            const value = input.value;
+            const newValue = value.replace(/[^0-9\/-]/g, '');
+            if (value !== newValue) {
+                input.value = newValue;
+            }
+        }
+
+        function validateForm() {
+            const nombreCompleto = document.getElementById('nombre_completo').value;
+            const puesto = document.getElementById('puesto').value;
+            const telefono = document.getElementById('telefono').value;
+            const fechaContratacion = document.getElementById('fecha_contratacion').value;
+            
+            if (!/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/.test(nombreCompleto)) {
+                alert("El campo de NOMBRES COMPLETO solo puede contener letras y espacios.");
+                return false;
+            }
+
+            if (!/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/.test(puesto)) {
+                alert("El campo de PUESTO solo puede contener letras y espacios.");
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(telefono)) {
+                alert("El campo de TELEFONO debe contener 10 dígitos numéricos.");
+                return false;
+            }
+
+            if (!/^[0-9\/-]+$/.test(fechaContratacion)) {
+                alert("El campo de FECHA DE CONTRATRACION debe contener solo números, guiones y diagonales.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

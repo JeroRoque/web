@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(150deg, #6C3483, #58d683); /* Fallback gradient */
+    background-image: url('2023-glossary-restaurant-roles.jpg'); /* Ruta de tu imagen de fondo */
+    background-size: cover; /* Ajustar tamaño para cubrir todo el fondo */
+    height: 100vh;
+    padding-top: 50px; /* Adds padding at the top of the body */
+}
+
+.container {
+    width: 85%;
+    max-width: 800px; /* Adjust the maximum width according to your design */
+    margin: 80px auto; /* Adds a margin of 100px at the top and bottom */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.548); /* Semi-transparent background */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    width: calc(50% - 10px); /* Ajusta el ancho según el diseño de dos columnas */
+    margin-bottom: 15px;
+}
+
+.form-group.full-width {
+    width: 100%; /* Ancho completo para un solo campo en una columna */
+}
+
+.form-group span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="date"] {
+    width: 100%; /* Ajusta el ancho para llenar el contenedor */
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group small.error-msg {
+    color: rgb(170, 39, 39);
+    font-size: 12px;
+    display: none; /* Ocultamos el mensaje de error por defecto */
+}
+
+.button {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button input[type="submit"],
+.button button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #727a72;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px; /* Adds some space between the buttons */
+}
+
+.button input[type="submit"]:hover,
+.button button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos para validación personalizada */
+#form-validation.was-validated .form-group input:invalid {
+    border-color: red;
+}
+
+#form-validation.was-validated .form-group input:invalid:focus {
+    box-shadow: 0 0 5px red;
+}
+
+#form-validation .form-group input:invalid + .error-msg {
+    display: block;
+}
+
+#form-validation .form-group input:required:invalid {
+    border-color: rgb(172, 206, 132);
+}
+
+#form-validation .form-group input:required:invalid + .error-msg {
+    display: block;
+}
+
+/* Estilos generales para todos los campos de entrada */
+input, textarea {
+    width: 100%; /* Ajusta el ancho para llenar el contenedor */
+    padding: 10px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
